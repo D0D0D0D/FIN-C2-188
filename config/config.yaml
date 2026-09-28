@@ -1,0 +1,27 @@
+# Runtime parameters loaded separately from the AgentRegistry manifest.
+max_retry: 3
+timeout_seconds: 60
+memory_enabled: false
+max_evidence_entries: 200
+max_requirement_segments: 50
+payload_ttl_seconds: 300
+max_quotable_span_chars: 120
+min_quotable_span_chars: 8
+max_text_chars: 200000
+
+sufficiency_rubric:
+  rubric_id: "fsa-exam-evidence-v1"
+  version: "1.0"
+  approved_by: "SAMPLE (not customer-approved)"
+  approved_on: "SAMPLE"
+  reviewer_role: "規制対応責任者"
+  escalation_path: "所見に不同意の場合は規制対応責任者が判断し、本エージェントの出力を採用しない"
+  criteria:
+    - id: "period_coverage"
+      label: "要求された対象期間を証拠がカバーしているか"
+    - id: "population_scope"
+      label: "要求された母集団を証拠が網羅しているか"
+    - id: "control_action"
+      label: "要求された統制行為の実施が証跡で確認できるか"
+    - id: "approval_authority"
+      label: "要求された承認権限での承認記録が存在するか"

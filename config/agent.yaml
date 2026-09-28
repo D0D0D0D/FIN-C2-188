@@ -1,0 +1,18 @@
+# Agent Manifest — AgentRegistry entry point
+id: "FIN-C2-188"
+name: "ExamEvidenceSufficiencyReviewAgent"
+namespace: "fin"
+version: "1.0.0"
+enabled: true
+class: "src.graph.graph.ExamEvidenceSufficiencyReviewGraph"
+category: "Cat 2"
+# Static generation contract. Omitted by legacy templates defaults to deterministic.
+# This AG drives its LLM stage through the config["llm"] injection seam (BaseLLM), so the
+# truthful declaration is llm — omitting it would record an LLM template as deterministic.
+generation_mode: "llm"  # deterministic | llm
+industry: "FIN"
+base_type: "AgentBaseGraph"
+required_trust_level: "VERIFIED_EXTERNAL"
+requires:
+  secrets: []
+  extras: []
